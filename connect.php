@@ -1,16 +1,8 @@
 /* Script que conecta una base de datos a php */
 <?php
- 
-    define("HOST_DB", "localhost");
-    define("USER_DB", "root");
-    define("PASS_DB", "");
-    define("NAME_DB", "basedatos");
- 
-    $conexion = new mysqli(
-        constant("HOST_DB"),
-        constant("USER_DB"),
-        constant("PASS_DB"),
-        constant("NAME_DB")
-    );
- 
+$con = mysqli_connect("localhost","root","","register");
+if (mysqli_connect_errno())
+  {
+  echo "No se puede conectar con la base de datos: " . mysqli_connect_error();
+  }
 ?>
